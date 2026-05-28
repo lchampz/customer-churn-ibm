@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/pos/customer-churn-ibm/src/customer_churn_ibm/mlruns/931733610668822056/efbf37a81fac4e2eafc08e138250d7b4/artifacts
+end_time: 1779920716794
+entry_point_name: ''
+experiment_id: '931733610668822056'
+lifecycle_stage: active
+run_id: efbf37a81fac4e2eafc08e138250d7b4
+run_name: KNN
+run_uuid: efbf37a81fac4e2eafc08e138250d7b4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779920712004
+status: 3
+tags: []
+user_id: Champz

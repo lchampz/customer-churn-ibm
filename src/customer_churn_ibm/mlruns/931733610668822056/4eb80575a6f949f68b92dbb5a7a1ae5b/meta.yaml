@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/pos/customer-churn-ibm/src/customer_churn_ibm/mlruns/931733610668822056/4eb80575a6f949f68b92dbb5a7a1ae5b/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '931733610668822056'
+lifecycle_stage: active
+run_id: 4eb80575a6f949f68b92dbb5a7a1ae5b
+run_name: gentle-goat-673
+run_uuid: 4eb80575a6f949f68b92dbb5a7a1ae5b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779223745517
+status: 1
+tags: []
+user_id: Champz

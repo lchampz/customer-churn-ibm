@@ -1,0 +1,6 @@
+artifact_location: file:///c:/pos/customer-churn-ibm/src/customer_churn_ibm/mlruns/931733610668822056
+creation_time: 1779216264890
+experiment_id: '931733610668822056'
+last_update_time: 1779216264890
+lifecycle_stage: active
+name: customer_churn_ibm

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/pos/customer-churn-ibm/src/customer_churn_ibm/mlruns/931733610668822056/b71e4aae9f694f6190e4bbfba1aa4fee/artifacts
+end_time: 1779221531244
+entry_point_name: ''
+experiment_id: '931733610668822056'
+lifecycle_stage: active
+run_id: b71e4aae9f694f6190e4bbfba1aa4fee
+run_name: Logistic Regression Baseline
+run_uuid: b71e4aae9f694f6190e4bbfba1aa4fee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779221531169
+status: 3
+tags: []
+user_id: Champz

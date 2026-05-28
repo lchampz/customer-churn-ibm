@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/pos/customer-churn-ibm/src/customer_churn_ibm/mlruns/931733610668822056/5844b68dbd0243289d9c44c3485f2a78/artifacts
+end_time: 1779920044771
+entry_point_name: ''
+experiment_id: '931733610668822056'
+lifecycle_stage: active
+run_id: 5844b68dbd0243289d9c44c3485f2a78
+run_name: Random Forest Baseline
+run_uuid: 5844b68dbd0243289d9c44c3485f2a78
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779920038909
+status: 3
+tags: []
+user_id: Champz

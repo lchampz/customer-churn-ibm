@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/pos/customer-churn-ibm/src/customer_churn_ibm/mlruns/931733610668822056/9d872a078bef4bfcbd254bedb51131b8/artifacts
+end_time: 1779920706762
+entry_point_name: ''
+experiment_id: '931733610668822056'
+lifecycle_stage: active
+run_id: 9d872a078bef4bfcbd254bedb51131b8
+run_name: Gradient Boosting
+run_uuid: 9d872a078bef4bfcbd254bedb51131b8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779920700960
+status: 3
+tags: []
+user_id: Champz
