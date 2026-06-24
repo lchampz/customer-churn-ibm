@@ -4,6 +4,13 @@ mlruns/
 mlflow.db
 outputs/
 
+# Artefatos de modelo
+*.pkl
+*.pt
+*.pth
+models/*.pkl
+models/*.pt
+
 # Python
 __pycache__/
 *.py[cod]
