@@ -9,14 +9,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (
-    accuracy_score,
-    average_precision_score,
-    f1_score,
-    precision_score,
-    recall_score,
-    roc_auc_score,
-)
+from sklearn.metrics import (accuracy_score, average_precision_score, f1_score,
+                             precision_score, recall_score, roc_auc_score)
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 
@@ -56,10 +50,10 @@ def _evaluate(pipeline: Pipeline, X_test: pd.DataFrame, y_test: pd.Series) -> di
         "precision": precision_score(y_test, y_pred, zero_division=0),
         "recall": recall_score(y_test, y_pred, zero_division=0),
         "f1": f1_score(y_test, y_pred, zero_division=0),
-    }
+    } # pyright: ignore[reportAssignmentType]
     if y_proba is not None:
-        metrics["roc_auc"] = roc_auc_score(y_test, y_proba)
-        metrics["pr_auc"] = average_precision_score(y_test, y_proba)
+        metrics["roc_auc"] = roc_auc_score(y_test, y_proba) # type: ignore
+        metrics["pr_auc"] = average_precision_score(y_test, y_proba)  # type: ignore
 
     return metrics
 
@@ -92,7 +86,7 @@ def train_baselines(
             mlflow.log_metrics(metrics)
 
             if cfg["log_artifact"]:
-                mlflow.sklearn.log_model(
+                mlflow.sklearn.log_model( # type: ignore
                     pipeline,
                     name.lower(),
                     input_example=X_test.head(1),

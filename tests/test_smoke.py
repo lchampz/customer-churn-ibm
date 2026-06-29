@@ -13,7 +13,7 @@ from customer_churn_ibm.model_mlp import ChurnMLP, MLPClassifier
 def _synthetic_df(n: int = 20) -> pd.DataFrame:
     data = {col: [1.0] * n for col in NUMERICAL_FEATURES}
     for col in CATEGORICAL_FEATURES:
-        data[col] = ["Yes"] * n
+        data[col] = ["Yes"] * n # type: ignore
     return pd.DataFrame(data)
 
 

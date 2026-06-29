@@ -2,10 +2,11 @@
 
 import numpy as np
 import pandas as pd
-import pandera as pa
+import pandera.pandas as pa
 import pytest
 
-from customer_churn_ibm.config import CATEGORICAL_FEATURES, NUMERICAL_FEATURES, TARGET
+from customer_churn_ibm.config import (CATEGORICAL_FEATURES,
+                                       NUMERICAL_FEATURES, TARGET)
 
 RAW_SCHEMA = pa.DataFrameSchema(
     {

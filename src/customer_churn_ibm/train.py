@@ -2,6 +2,9 @@
 
 import logging
 import pathlib
+import warnings
+
+warnings.filterwarnings("ignore")
 
 import joblib
 import mlflow
