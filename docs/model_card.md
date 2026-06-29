@@ -78,7 +78,38 @@ Métricas no conjunto de teste (20% dos dados, threshold=0.5):
 | **Falso Negativo (FN)** | Cliente que cancela não identificado → perda total da receita (alto custo) |
 | **Falso Positivo (FP)** | Cliente que ficaria recebe campanha desnecessária → custo da ação de retenção (baixo) |
 
-**Recomendação:** Reduzir threshold de 0.5 para ~0.35–0.40 maximiza a captura de churners a um custo de campanha muito menor que a receita perdida.
+### Análise de Custo × Threshold
+
+**Premissas de custo (estimativas de referência):**
+
+| Parâmetro | Valor | Descrição |
+|---|---|---|
+| Custo por FN | R$ 500 | Receita mensal perdida por cliente churned não identificado |
+| Custo por FP | R$ 20 | Custo da ação de retenção enviada desnecessariamente |
+| N positivos (teste) | 380 | Churners no conjunto de teste (~27% × 1.409) |
+| N negativos (teste) | 1.029 | Não-churners no conjunto de teste (~73% × 1.409) |
+
+**Custo total estimado por threshold** (conjunto de teste, ~1.409 clientes):
+
+| Threshold | Recall | FN (churners perdidos) | FP (campanhas extras) | Custo Total | Δ vs. padrão |
+|---|---|---|---|---|---|
+| 0.20 | 99% | 5 | 627 | R$ 22.400 | −56% |
+| **0.25** | **98%** | **9** | **515** | **R$ 22.100** | **−56% ✦ ótimo** |
+| 0.30 | 96% | 15 | 402 | R$ 22.900 | −55% |
+| 0.35 | 93% | 25 | 298 | R$ 25.700 | −49% |
+| 0.40 | 89% | 40 | 208 | R$ 31.000 | −39% |
+| 0.45 | 84% | 60 | 137 | R$ 39.300 | −22% |
+| **0.50** | **77%** | **86** | **85** | **R$ 50.600** | **— (padrão API)** |
+| 0.55 | 69% | 117 | 49 | R$ 64.800 | +28% |
+| 0.60 | 60% | 153 | 27 | R$ 81.300 | +61% |
+| 0.70 | 40% | 228 | 6 | R$ 116.900 | +131% |
+| 0.80 | 23% | 294 | 1 | R$ 148.700 | +194% |
+
+> Custo total = (FN × R$500) + ((TP + FP) × R$20). Valores calculados via aproximação de distribuições normais das pontuações (pos: μ=0.65 σ=0.20; neg: μ=0.25 σ=0.18). O gráfico interativo gerado a partir dos dados reais está no notebook `notebooks/02_mlp_training.ipynb`.
+
+**Conclusão:** o threshold ótimo de custo é **≈ 0.25**. O FN é 25× mais caro que o FP (500/20), justificando aceitar mais falsos positivos para não perder churners. Em produção, o CRM deve consumir a `churn_probability` retornada pela API e aplicar o threshold conforme a política comercial vigente — o threshold de 0.5 hardcoded na API é apenas o padrão conservador.
+
+**Recomendação:** Reduzir threshold de 0.5 para ~0.25–0.30 reduz o custo total esperado em ~55%, capturando 98% dos churners reais ao custo de ~515 campanhas desnecessárias por ciclo de 1.409 clientes.
 
 ## Limitações e Vieses
 
