@@ -1,7 +1,7 @@
 # Customer Churn IBM — Previsão de Churn com MLP PyTorch
 
-Projeto de ML end-to-end para previsão de cancelamento de clientes de telecomunicações.  
-Desenvolvido como Tech Challenge Fase 1 — FIAP PDS Tech.
+Projeto de ML end-to-end para previsão de cancelamento de clientes de telecomunicações.
+Desenvolvido como Tech Challenge Fase 1 — FIAP POS Tech.
 
 ## Estrutura do Projeto
 
@@ -34,10 +34,10 @@ customer-churn-ibm/
 
 ## Dataset
 
-**Telco Customer Churn — IBM** ([Kaggle](https://www.kaggle.com/datasets/yeanzc/telco-customer-churn-ibm-dataset))  
+**Telco Customer Churn — IBM** ([Kaggle](https://www.kaggle.com/datasets/yeanzc/telco-customer-churn-ibm-dataset))
 7.043 clientes, 33 variáveis, desbalanceado (~73% não-churn / ~27% churn).
 
-**Features utilizadas:** 3 numéricas (`Tenure Months`, `Monthly Charges`, `Total Charges`) + 16 categóricas (`Contract`, `Internet Service`, etc.)  
+**Features utilizadas:** 3 numéricas (`Tenure Months`, `Monthly Charges`, `Total Charges`) + 16 categóricas (`Contract`, `Internet Service`, etc.)
 **Features removidas por leakage:** `Churn Score`, `CLTV`
 
 ## Setup
